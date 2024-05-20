@@ -6,6 +6,7 @@ const modifiersSymbol = Symbol('modifiers');
 const initialValueSymbol = Symbol('initial-value');
 const useInTotalSymbol = Symbol('use-in-total');
 const valueSymbol = Symbol('value');
+const diceSymbol = Symbol('dice');
 
 /**
  * A `RollResult` represents the value and applicable modifiers for a single die roll
@@ -222,6 +223,14 @@ class RollResult {
     }
 
     this[valueSymbol] = Number(value);
+  }
+
+  get dice() {
+    return this[diceSymbol];
+  }
+
+  set dice(value) {
+    this[diceSymbol] = value;
   }
 
   /**
